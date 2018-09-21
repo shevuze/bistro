@@ -538,29 +538,92 @@ p {
 .bi-timer {
 	text-align: center;
 	padding-bottom: 10px;
-	margin-top: 30px;
+	margin-top: 10px;
 	@media (min-width: $bp-medium) {
 		margin-top: 0;
 		padding-bottom: 60px;
 	}
 	&__time {
-		font-size: 34px;
+		font-size: 42px;
 		font-family: 'Playfair Display', serif;
 		margin-bottom: 10px;
+		display: flex;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+		@media (min-width: $bp-small) {
+			font-size: 64px;
+			margin-bottom: 20px;
+		}
 		@media (min-width: $bp-medium) {
 			font-size: 144px;
 			margin-bottom: 20px;
+			max-width: 1100px;
 		}
 	}
-	&__names-line {
-		margin: 0 auto;
-		max-width: 200px;
-		font-size: 12px;
-		display: flex;
-		justify-content: space-between;
-		@media (min-width: $bp-medium) {
-			font-size: 18px;
-			max-width: 800px;
+	
+	&__days {
+		position: relative;
+		width: 25%;
+		&:after {
+			content: "days";
+			position: absolute;
+			bottom: -20px;
+			left: 30%;
+			font-size: 12px;
+			@media (min-width: $bp-medium) {
+				font-size: 18px;
+				left: 38%;
+				bottom: -26px;
+			}
+		}
+	}
+	&__hours {
+		position: relative;
+		width: 25%;
+		&:after {
+			content: "hours";
+			position: absolute;
+			bottom: -20px;
+			left: 27%;
+			font-size: 12px;
+			@media (min-width: $bp-medium) {
+				font-size: 18px;
+				left: 38%;
+				bottom: -26px;
+			}
+		}
+	}
+	&__minutes {
+		position: relative;
+		width: 25%;
+		&:after {
+			content: "minutes";
+			position: absolute;
+			bottom: -20px;
+			left: 20%;
+			font-size: 12px;
+			@media (min-width: $bp-medium) {
+				font-size: 18px;
+				left: 36%;
+				bottom: -26px;
+			}
+		}
+	}
+	&__seconds {
+		position: relative;
+		width: 25%;
+		&:after {
+			content: "seconds";
+			position: absolute;
+			bottom: -20px;
+			left: 24%;
+			font-size: 12px;
+			@media (min-width: $bp-medium) {
+				font-size: 18px;
+				left: 34%;
+				bottom: -26px;
+			}
 		}
 	}
 }
