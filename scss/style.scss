@@ -54,12 +54,14 @@ a {
 input[type="submit"],
 input[type="button"],
 button,
-.bi-button{
+.bi-button {
+	svg {
+		transition: transform .3s ease-in-out;
+	}
 	svg:hover {
 		transform: scale(1.2);
 		transition: all 0.3s ease;
 	}
-
 }
 button {
 	border: none;
@@ -103,6 +105,13 @@ input[type="number"]:focus,
 input[type="tel"]:focus,
 textarea:focus,
 select:focus {
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
 }
 
 li {
@@ -154,7 +163,7 @@ p {
 		position: relative;
 		padding-bottom: 20px;
 		@media (min-width: $bp-medium) {
-			padding-bottom: 220px;
+			padding-bottom: 170px;
 		}
 	}
 
@@ -243,20 +252,21 @@ p {
 }
 .bi-nav {
 	position: absolute;
-	top: 10px;
-	right: 10px;
+	top: -15px;
+	right: 0;
 	text-align: left;
 	@media (min-width: $bp-medium) {
 		position: relative;
+		top: 10px;
 	}
 	&__list {
-		transition: 0.2s;
+		transition: 0.4s;
 		transform: scaleX(0) translateX(0%);
 		transform-origin: right center;
 		opacity: 0;
 		visibility: hidden;
-		padding: 20px 15px;
-	  	margin-right: -25px;
+		padding: 60px 20px 40px;
+	  	margin-right: -20px;
 	  	position: relative;
 	  	z-index: 10;
 		@media (min-width: $bp-medium) {
@@ -321,7 +331,7 @@ p {
 		position: absolute;
 		right: 0px;
 		bottom: -124px;
-		z-index: 4;
+		z-index: 0;
 		@media (min-width: $bp-medium) {
 			content: '';
 			background-image: url('../img/rosemary.png');
@@ -456,7 +466,7 @@ p {
 		}
 		@media (min-width: $bp-medium) {
 			bottom: -52px;
-			left: 30px;
+			left: 50px;
 			box-shadow: -42px -42px 21px -41px  rgba(0,0,0,0.45);
 		}
 	}
@@ -483,9 +493,17 @@ p {
 		bottom: 20px;
 		left: 50%;
 		transform: translateX(-50%);
-		z-index:30;
+		z-index:10;
 		@media (min-width: $bp-medium) {
 			bottom: 30px;
+		}
+		span {
+			position: absolute;
+			top: 30%;
+			left: 20%;
+			font-weight: 700;
+			font-size: 16px;
+			z-index: 10;
 		}
 	}
 }
@@ -570,6 +588,7 @@ p {
 		width: 100%;
 		padding: 10px 5px 5px;
 		text-align: center;
+		outline: none;
 		@media (min-width: $bp-medium) {
 			width: 45%;
 		}
@@ -582,6 +601,7 @@ p {
 		padding: 10px 5px 0px;
 		text-align: center;
 		width: 45%;
+		outline: none;
 	}
 	&__price {
 		font-family: 'Playfair Display', serif;
@@ -715,9 +735,26 @@ p {
 //CONTACTS
 .bi-contact {
 	padding: 20px 0;
+	position: relative;
 	@media (min-width: $bp-medium) {
         padding: 65px 0;
-    }
+	}
+	&:before {
+		
+		@media (min-width: $bp-medium) {
+			content: '';
+			background-image: url('../img/spices.png');
+			background-size: 100%;
+			background-repeat: no-repeat;
+			width: 350px;
+			height: 350px;
+			position: absolute;
+			background-size: 100%;
+			right: 10%;
+			top: -80px;
+			z-index: 1;
+		}
+	}
 }
 .bi-contact-info {
 	display: flex;
@@ -725,6 +762,8 @@ p {
 	flex-direction: column;
 	margin-top: 50px;
 	margin-bottom: 20px;
+	position: relative;
+	z-index: 5;
 	&__phone {
 		position: relative;
 		margin-bottom: 20px;	
@@ -783,6 +822,8 @@ p {
 	max-width: 870px;
 	display: block;
 	margin: 0 auto;
+	position: relative;
+	z-index: 5;
 	&__input {
 		background: transparent;
 		border: none;
@@ -790,6 +831,7 @@ p {
 		width: 100%;
 		padding: 20px 10px 10px;
 		text-align: center;
+		outline: none;
 	}
 	&__input--center {
 		margin: 0;
@@ -825,6 +867,9 @@ p {
 	padding: 0;
 	li {
 		margin: 0 15px;
+	}
+	svg {
+		transition: transform .3s ease-in-out;
 	}
 	svg:hover {
 		transform: scale(1.3);

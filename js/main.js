@@ -1,12 +1,23 @@
 ;(function() {
 	"use strict";
-
+	
+	//burger menu
 	$('.bi-menu-btn').on('click', function(e) {
 		e.preventDefault();
 		$(this).toggleClass('bi-menu-btn-active');
 		$('.bi-nav__list').toggleClass('bi-nav-active');
 	  });
 	  var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
+
+	  //scroll
+	  $(document).ready(function(){
+		$("#menu").on("click","a", function (event) {
+			event.preventDefault();
+			var id  = $(this).attr('href'),
+				top = $(id).offset().top;
+			$('body,html').animate({scrollTop: top}, 1200);
+		});
+	 }); 
 
 })();
 
@@ -37,6 +48,7 @@
 	  }, 1000);
 
 })();
+
 
 
 	
